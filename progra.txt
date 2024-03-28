@@ -1,0 +1,255 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+// Mask-Mascaras: constantes que definimos, que tienen uno y ceros en lugares especificos para que nos den valores 
+// requeridos. Usa operadores and y or 
+#include <stdio.h> // me provee el printf 
+#include <stdint.h>
+int main()
+{
+  //  printf("Hello World");
+//Ejercicio1. Declare una constante de 32 bits, con todos los bits en 0 y el bit 6 en 1. Utilice el operador <<.
+
+const uint32_t constante= 1 << 6; // un uno desplazado 6 << desplaza n lugares. 
+printf ("En valor de la constante es %d \r\n", constante);
+
+//Ejercicio 2 . Declare una constante de 16 bits, con todos los bits en 0 y los bits 3 y 4 en 1. Utilice el operador <<.
+#include <stdio.h>
+#include <stdint.h>
+int main()
+{
+ uint16_t variable; 
+const uint16_t mask1=(1<<3 | 1<<4 );
+variable |= mask1;
+printf("El valor de la variable es: %d \r\n ", variable);
+    return 0;
+}
+//Ejercicio 3.  Declare una variable de 16 bits sin signo, con el valor inicial 0xFFFF y luego, 
+mediante una operación de máscaras, coloque a 0 el bit 14.
+ 
+uint16_t variable=  0xFFFF;
+ // printf("Valor de %d \r\n", variable);
+ const uint16_t mask= ~(1<<14);
+ variable &= mask;
+  printf("Valor de %d \r\n", variable);
+
+Ejercicio 4. Declare una variable de 32 bits sin signo, con el valor inicial 0x0000 y luego,
+//mediante una operación de máscaras, coloque a 1 el bit 2.
+
+
+uint32_t variable= 0x0000;
+printf("Valor de %d \r\n", variable);
+const uint32_t mask= 1<<2;
+variable |= mask;
+printf("Valor de %d \r\n", variable);
+
+Ejercicio 5. 
+Declare una variable de 32 bits sin signo, con el valor inicial 0x00001234 y luego, 
+mediante una operación de máscaras, invierta el bit 0.
+
+
+uint32_t variable= 0x00001234;
+printf("Valor de %d \r\n", variable);
+const uint32_t mask = 0x1;
+variable= variable ^  mask;
+printf("Valor de %d \r\n", variable);
+
+
+Ejercicio 6 .
+
+uint32_t variable;
+const uint32_t mask = ~(1<<4);
+variable &=  mask;
+printf("Valor de %d \r\n", variable);
+
+//Ejercicio 7
+
+uint32_t variable; 
+const uint32_t mask1= 1 <<3; // mascara de 100; 
+const uint32_t mask2= ~((1<<13)|(1<<14)); // yo quiero  que me quede un 0 en 13 y 14. Entonces lo niego
+variable= variable | mask1; // me da 3 
+// variable |= mask1; 
+
+variable= variable & mask2;
+
+printf ("valor de la variable es %d", variable);
+
+//Una mascara que sea todo 1 menos 13 y 14 que sea 0
+
+Ejercicio 8. Sobre una variable de 16 bits previamente declarada y de valor desconocido, 
+invierta el estado de los bits 3 y 5 mediante máscaras y el operador <<.
+
+uint16_t variable; 
+const uint16_t mask= (1 << 3) | (1 << 5); // un 1 cambiara el estado
+variable ^=mask;
+
+Ejercicio9. 
+
+const uint32_t variable; 
+printf("Ingrese el valor de la variable: ");
+ scanf("%hx", &variable);
+ uint32_t A=0;
+ 
+ if((variable &(1<<4))==0)
+ {
+     A=0;
+ }
+ else
+ {
+ A= 0xaa; 
+ 
+ }
+ 
+printf("Valor de %d \r\n", A);
+
+Ejercicio 10. Sobre una variable de 16 bits previamente declarada, verifique si el bit 3 y el bit 1 son 1.
+const uint16_t variable; 
+printf("Ingrese el valor de la variable: ");
+ scanf("%hx", &variable);
+ 
+ const uint16_t mask= ((1<<3) | (1<<1));
+ 
+ if((variable & mask) ==mask ) //Si los bit 3 y 1 son iguales a la mask 
+ {
+  
+    printf("Los bits 3 y 1 son igual a 1 %d \r\n"); 
+    
+ }
+ else
+ {
+printf("Los bits 3 y 1 no son igual a 1 %d\r\n"); 
+ }
+ 
+ 
+Ejercicio 11.
+
+const uint8_t variable; 
+printf("Ingrese el valor de la variable: ");
+scanf("%hx", &variable);
+ 
+ if ((variable & 0x81) == 0x81) 
+    {
+        printf("Los bits 0 y 7 son iguales (ambos son 1 o ambos son 0).\n");
+    } else {
+        printf("Los bits 0 y 7 no son iguales.\n");
+    }
+
+Ejercicio 12. Declare un puntero a un entero con signo de 16 bits y cargue inicialmente el valor -1. 
+Luego, mediante máscaras, coloque un 0 en el bit 4.
+
+int16_t *ptr, variable=(-1); 
+
+ ptr= &variable;
+
+*ptr &= ~(1<<4); //Pongo a cero el bit 4.
+ 
+printf("Valor de puntero %d \r\n", *ptr);
+
+
+Ejercicio 14. Declare una estructura “alumno”, con los campos “nombre” de 12 caracteres, “apellido” de 20 caracteres y edad. 
+Defina una variable con esa estructura y cargue los campos con sus propios datos.
+Defina un puntero a esa estructura y cargue los campos con los datos de su compañero (usando acceso por punteros).
+
+#include <string.h>
+#include <stdio.h>
+#include <stdint.h>
+struct alumno {
+    
+    char nombre[12];
+    char apellido [20];
+    int edad; 
+} ;
+
+int main()
+{
+  struct alumno datos_personales= {"Natasha", "Venacio", 23}; 
+  //imprimo mi informacion 
+    printf("Mis datos:\n");
+    printf("Nombre: %s\n", datos_personales.nombre);
+    printf("Apellido: %s\n", datos_personales.apellido);
+    printf("Edad: %d\n", datos_personales.edad);
+
+struct alumno *ptr;
+ptr= &datos_personales; //Al puntero asigno mis datos personales. 
+
+ strcpy(ptr->nombre, "Karen");
+    strcpy(ptr->apellido, "Folmer");
+    ptr->edad = 23;
+
+
+  //Imprimo los datos de un compañero
+    printf("\nDatos de mi compañera:\n");
+    printf("Nombre: %s\n", ptr->nombre);
+    printf("Apellido: %s\n", ptr->apellido);
+    printf("Edad: %d\n", ptr->edad);
+    return 0;
+}
+
+
+
+Ejercicio 15
+
+
+Ejercicio 16.
+
+Declare una variable sin signo de 32 bits y cargue el valor 0x01020304.
+ Declare cuatro variables sin signo de 8 bits y, utilizando máscaras, rotaciones y truncamiento, cargue cada uno de los bytes de la variable de 32 bits.
+Realice el mismo ejercicio, utilizando la definición de una “union”.
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+// Ejercicio 16
+
+// Declare una variable sin signo de 32 bits y cargue el valor 0x01020304. 
+//a) Declare cuatro variables sin signo de 8 bits y, utilizando máscaras, rotaciones y truncamiento, 
+//cargue cada uno de los bytes de la variable de 32 bits.
+//b) Realice el mismo ejercicio, utilizando la definición de una “union”.
+
+
+#include <string.h>
+#include <stdio.h>
+#include <stdint.h>
+
+union bits{
+    uint32_t valoriable32;
+  uint8_t bytes[4];
+} bit;
+int main()
+{
+    //item a)
+ uint32_t variable= 0x01020304; // esto en binario es 00000001 00000010 00000011 00000100
+ uint8_t vari1, vari2, vari3, vari4; 
+ vari1 = (variable >> 24) & 0xff;
+ vari2 = (variable >> 16) & 0xff;
+ vari3 = (variable >> 8) & 0xff;
+ vari4 = variable & 0xff;
+     
+ 
+  printf("vari1: %x\n",vari1);
+    printf("vari2: %x\n",vari2);
+    printf("vari3: %x\n", vari3);
+    printf("vari 4: %x\n", vari4);   
+    
+    //item b)
+ 
+ union bits vari_bit; 
+ vari_bit.valoriable32= 0x01020304;
+   printf("Byte 1: %x\n", vari_bit.bytes[3]);
+   printf("Byte 2: %x\n", vari_bit.bytes[2]);
+   printf("Byte 3: %x\n", vari_bit.bytes[1]);
+   printf("Byte 4: %x\n",vari_bit.bytes[0]);
+
+    return 0;
+}
+
+
