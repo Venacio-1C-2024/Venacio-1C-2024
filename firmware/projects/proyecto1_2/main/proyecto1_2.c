@@ -44,25 +44,27 @@ void app_main(void){
 			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 			printf("LED1 OFF\n");
 			LedOff(LED_1);
-			//No seria lo mismo hacer LedToggle(LED_1)? Consultar.
-
+			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+			
     		break;
 
     		case SWITCH_2:
-    			//LedToggle(LED_2);
 				printf("LED2 ON\n");
 			LedOn(LED_2);
 			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 			printf("LED2 OFF\n");
 			LedOff(LED_2);
-
+			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     		break;
 			case SWITCH_1 | SWITCH_2 : //la suma de las dos teclas 
-			 LedToggle(LED_3);
-			 vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+			 LedOn(LED_3);
+			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+			printf("LED2 OFF\n");
+			LedOff(LED_3);
+			vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 			 break;
     	}
-	  //  LedToggle(LED_3);
-		//vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+	 
 	}
+	
 }

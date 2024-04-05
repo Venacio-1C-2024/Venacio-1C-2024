@@ -14,7 +14,16 @@
  *
  * |    Peripheral  |   ESP32   	|
  * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+ * | 	  D1	 	| 	GPIO_20		|
+ * | 	  D2	 	| 	GPIO_21		|
+ * | 	  D3	 	| 	GPIO_22		|
+ * | 	  D4	 	| 	GPIO_23 	|
+ * | 	 SEL_1	 	| 	GPIO_19		|
+ * | 	 SEL_2	 	| 	GPIO_18		|
+ * | 	 SEL_3	 	| 	GPIO_9		|
+ * | 	  +5V	 	| 	 +5V		|
+ * | 	  GND	 	| 	 GND		|
+ *
  *
  *
  * @section changelog Changelog
@@ -57,13 +66,13 @@ typedef struct
 
 /** @fn void convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
  * @brief es una funcion que convierte un dato a codigo BCD.
- * @param . recibe como parametro el dato, la cantidad de digitos de la salida y un puntero a un arreglo al cual se almacenan los n digitos. 
+ * @param [in] uint32_t data, uint8_t digits, uint8_t * bcd_number 
  * @return
  * 
  *  
  * /
 */
-void convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
+void convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number) // recibe como parametro el dato, la cantidad de digitos de la salida y un puntero a un arreglo al cual se almacenan los n digitos. 
 {
 	for( int i=digits-1; i>=0;i--)
 	{
@@ -73,11 +82,11 @@ void convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number)
 }
 /** @fn void funcionBCD(uint8_t dig, gpioConf_t *vec)
  * @brief verifica el estado cada bit del digito BCD y lo  cambia. 
- * @param . recibe como parametro el digito en BCD y un puntero a un arreglo del tipo gpioConf_t
+ * @param uint8_t dig, gpioConf_t *vec  
  * @return
 */
 
-void funcionBCD(uint8_t dig, gpioConf_t *vec) 
+void funcionBCD(uint8_t dig, gpioConf_t *vec)  // recibe como parametro el digito en BCD y un puntero a un arreglo del tipo gpioConf_t
 {
 	for(uint8_t i=0; i<4; i++)
 	{
@@ -98,11 +107,11 @@ void funcionBCD(uint8_t dig, gpioConf_t *vec)
 
 /**  @fn void mostrardisplay ( uint32_t data, uint8_t digit, gpioConf_t *vec,  gpioConf_t *map)
  *  @brief llama a las funciones anteriores para que en conjunto muestren el valor dado por display.
- * @param . tiene como parametro el dato, la cantidad de digitos de la calida, un puntero a un vector de tipo gpioConf_t,   y otro puntero a un vector que actua de mapeo de tipo gpioConf_t
+ * @param [in]  uint32_t data, uint8_t digit, gpioConf_t *vec,  gpioConf_t *map  
  *  @return 
 */
 
-void mostrardisplay ( uint32_t data, uint8_t digit, gpioConf_t *vec,  gpioConf_t *map)
+void mostrardisplay ( uint32_t data, uint8_t digit, gpioConf_t *vec,  gpioConf_t *map) // tiene como parametro el dato, la cantidad de digitos de la calida, un puntero a un vector de tipo gpioConf_t,   y otro puntero a un vector que actua de mapeo de tipo gpioConf_t
 {
 	uint8_t arreglo[3];
 
