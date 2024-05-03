@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto 2 - Ejercicio 4: Referencia del archivo firmware/projects/proyecto2_ejer4/main/proyecto2_ejer4.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto 2 - Ejercicio 4<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('proyecto2__ejer4_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo proyecto2_ejer4.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;led.h&quot;</code><br />
+<code>#include &quot;switch.h&quot;</code><br />
+<code>#include &quot;gpio_mcu.h&quot;</code><br />
+<code>#include &quot;hc_sr04.h&quot;</code><br />
+<code>#include &quot;lcditse0803.h&quot;</code><br />
+<code>#include &quot;timer_mcu.h&quot;</code><br />
+<code>#include &quot;uart_mcu.h&quot;</code><br />
+<code>#include &quot;analog_io_mcu.h&quot;</code><br />
+</div>
+<p><a href="proyecto2__ejer4_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a8c0e695db9ea0899c79b9c5493827b70" id="r_a8c0e695db9ea0899c79b9c5493827b70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c0e695db9ea0899c79b9c5493827b70">CONFIG_BLINK_PERIOD1</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="separator:a8c0e695db9ea0899c79b9c5493827b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7" id="r_a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;231</td></tr>
+<tr class="separator:a6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a17501dc7a5e88ca0ebb8939c53991791" id="r_a17501dc7a5e88ca0ebb8939c53991791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17501dc7a5e88ca0ebb8939c53991791">TaskConversion</a> ()</td></tr>
+<tr class="memdesc:a17501dc7a5e88ca0ebb8939c53991791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Es una tarea que lee la señal analogica y luego la transmite a un graficador de puerto serie.  <br /></td></tr>
+<tr class="separator:a17501dc7a5e88ca0ebb8939c53991791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6026344a403f66cabfb05bd9f7d98a39" id="r_a6026344a403f66cabfb05bd9f7d98a39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6026344a403f66cabfb05bd9f7d98a39">FuncionTask1</a> (void *param)</td></tr>
+<tr class="memdesc:a6026344a403f66cabfb05bd9f7d98a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía una notificación a la tarea asociada MedirDistancia.  <br /></td></tr>
+<tr class="separator:a6026344a403f66cabfb05bd9f7d98a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a572e011a8b3ce1d36edef47e321b1164" id="r_a572e011a8b3ce1d36edef47e321b1164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572e011a8b3ce1d36edef47e321b1164">FuncionTimerTask</a> ()</td></tr>
+<tr class="memdesc:a572e011a8b3ce1d36edef47e321b1164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que convierte una señal digital a analogico.  <br /></td></tr>
+<tr class="separator:a572e011a8b3ce1d36edef47e321b1164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7b21dfec674ceac94e6ba39c34d5d008" id="r_a7b21dfec674ceac94e6ba39c34d5d008"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b21dfec674ceac94e6ba39c34d5d008">dato</a></td></tr>
+<tr class="separator:a7b21dfec674ceac94e6ba39c34d5d008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f7a37dba921e0b0347b960fb40bc51" id="r_a78f7a37dba921e0b0347b960fb40bc51"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78f7a37dba921e0b0347b960fb40bc51">i</a> =0</td></tr>
+<tr class="separator:a78f7a37dba921e0b0347b960fb40bc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c75b4f34726e9b7a8dd42ca7fa1d31d" id="r_a2c75b4f34726e9b7a8dd42ca7fa1d31d"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c75b4f34726e9b7a8dd42ca7fa1d31d">main_task_handle</a> = NULL</td></tr>
+<tr class="separator:a2c75b4f34726e9b7a8dd42ca7fa1d31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dafb8b8179af8e9f4cc4df3f588e42e" id="r_a2dafb8b8179af8e9f4cc4df3f588e42e"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dafb8b8179af8e9f4cc4df3f588e42e">ecg</a> [<a class="el" href="#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td></tr>
+<tr class="separator:a2dafb8b8179af8e9f4cc4df3f588e42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a6b20d41d6252e9871430c242cb1a56e7" name="a6b20d41d6252e9871430c242cb1a56e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&#160;</a></span>BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFFER_SIZE&#160;&#160;&#160;231</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00051">51</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00116">FuncionTimerTask()</a>.</p>
+
+</div>
+</div>
+<a id="a8c0e695db9ea0899c79b9c5493827b70" name="a8c0e695db9ea0899c79b9c5493827b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0e695db9ea0899c79b9c5493827b70">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD1&#160;&#160;&#160;2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00050">50</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00129">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00129">129</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto2__ejer4_8c_source.html#l00050">CONFIG_BLINK_PERIOD1</a>, <a class="el" href="proyecto2__ejer4_8c_source.html#l00099">FuncionTask1()</a>, <a class="el" href="proyecto2__ejer4_8c_source.html#l00116">FuncionTimerTask()</a>, <a class="el" href="proyecto2__ejer4_8c_source.html#l00052">main_task_handle</a> y <a class="el" href="proyecto2__ejer4_8c_source.html#l00104">TaskConversion()</a>.</p>
+
+</div>
+</div>
+<a id="a6026344a403f66cabfb05bd9f7d98a39" name="a6026344a403f66cabfb05bd9f7d98a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6026344a403f66cabfb05bd9f7d98a39">&#9670;&#160;</a></span>FuncionTask1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncionTask1 </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envía una notificación a la tarea asociada MedirDistancia. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>es un puntero genérico que puede apuntar a cualquier tipo de dato. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><br  />
+<ul>
+<li>/ </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00099">99</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto2__ejer4_8c_source.html#l00052">main_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00129">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a572e011a8b3ce1d36edef47e321b1164" name="a572e011a8b3ce1d36edef47e321b1164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572e011a8b3ce1d36edef47e321b1164">&#9670;&#160;</a></span>FuncionTimerTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncionTimerTask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que convierte una señal digital a analogico. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return / </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00116">116</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto2__ejer4_8c_source.html#l00051">BUFFER_SIZE</a>, <a class="el" href="proyecto2__ejer4_8c_source.html#l00053">ecg</a> y <a class="el" href="proyecto2__ejer4_8c_source.html#l00048">i</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00129">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a17501dc7a5e88ca0ebb8939c53991791" name="a17501dc7a5e88ca0ebb8939c53991791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17501dc7a5e88ca0ebb8939c53991791">&#9670;&#160;</a></span>TaskConversion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TaskConversion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Es una tarea que lee la señal analogica y luego la transmite a un graficador de puerto serie. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00104">104</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto2__ejer4_8c_source.html#l00047">dato</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00129">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a7b21dfec674ceac94e6ba39c34d5d008" name="a7b21dfec674ceac94e6ba39c34d5d008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b21dfec674ceac94e6ba39c34d5d008">&#9670;&#160;</a></span>dato</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t dato</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00047">47</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00104">TaskConversion()</a>.</p>
+
+</div>
+</div>
+<a id="a2dafb8b8179af8e9f4cc4df3f588e42e" name="a2dafb8b8179af8e9f4cc4df3f588e42e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dafb8b8179af8e9f4cc4df3f588e42e">&#9670;&#160;</a></span>ecg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ecg[<a class="el" href="#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    76, 77, 78, 77, 79, 86, 81, 76, 84, 93, 85, 80,</div>
+<div class="line">    89, 95, 89, 85, 93, 98, 94, 88, 98, 105, 96, 91,</div>
+<div class="line">    99, 105, 101, 96, 102, 106, 101, 96, 100, 107, 101,</div>
+<div class="line">    94, 100, 104, 100, 91, 99, 103, 98, 91, 96, 105, 95,</div>
+<div class="line">    88, 95, 100, 94, 85, 93, 99, 92, 84, 91, 96, 87, 80,</div>
+<div class="line">    83, 92, 86, 78, 84, 89, 79, 73, 81, 83, 78, 70, 80, 82,</div>
+<div class="line">    79, 69, 80, 82, 81, 70, 75, 81, 77, 74, 79, 83, 82, 72,</div>
+<div class="line">    80, 87, 79, 76, 85, 95, 87, 81, 88, 93, 88, 84, 87, 94,</div>
+<div class="line">    86, 82, 85, 94, 85, 82, 85, 95, 86, 83, 92, 99, 91, 88,</div>
+<div class="line">    94, 98, 95, 90, 97, 105, 104, 94, 98, 114, 117, 124, 144,</div>
+<div class="line">    180, 210, 236, 253, 227, 171, 99, 49, 34, 29, 43, 69, 89,</div>
+<div class="line">    89, 90, 98, 107, 104, 98, 104, 110, 102, 98, 103, 111, 101,</div>
+<div class="line">    94, 103, 108, 102, 95, 97, 106, 100, 92, 101, 103, 100, 94, 98,</div>
+<div class="line">    103, 96, 90, 98, 103, 97, 90, 99, 104, 95, 90, 99, 104, 100, 93,</div>
+<div class="line">    100, 106, 101, 93, 101, 105, 103, 96, 105, 112, 105, 99, 103, 108,</div>
+<div class="line">    99, 96, 102, 106, 99, 90, 92, 100, 87, 80, 82, 88, 77, 69, 75, 79,</div>
+<div class="line">    74, 67, 71, 78, 72, 67, 73, 81, 77, 71, 75, 84, 79, 77, 77, 76, 76,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00053">53</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00116">FuncionTimerTask()</a>.</p>
+
+</div>
+</div>
+<a id="a78f7a37dba921e0b0347b960fb40bc51" name="a78f7a37dba921e0b0347b960fb40bc51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f7a37dba921e0b0347b960fb40bc51">&#9670;&#160;</a></span>i</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t i =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00048">48</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00116">FuncionTimerTask()</a>.</p>
+
+</div>
+</div>
+<a id="a2c75b4f34726e9b7a8dd42ca7fa1d31d" name="a2c75b4f34726e9b7a8dd42ca7fa1d31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c75b4f34726e9b7a8dd42ca7fa1d31d">&#9670;&#160;</a></span>main_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t main_task_handle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto2__ejer4_8c_source.html#l00052">52</a> del archivo <a class="el" href="proyecto2__ejer4_8c_source.html">proyecto2_ejer4.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto2__ejer4_8c_source.html#l00129">app_main()</a> y <a class="el" href="proyecto2__ejer4_8c_source.html#l00099">FuncionTask1()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_04345c6640234dec39381712c38bfe2c.html">proyecto2_ejer4</a></li><li class="navelem"><a class="el" href="dir_9809a366f3bdea7077dd3a96706c80c1.html">main</a></li><li class="navelem"><a class="el" href="proyecto2__ejer4_8c.html">proyecto2_ejer4.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
