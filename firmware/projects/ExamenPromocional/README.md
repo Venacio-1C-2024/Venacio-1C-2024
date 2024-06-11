@@ -1,3 +1,3 @@
-# Template
+# ExamenPromocion
 
-Este proyecto sirve como platilla para crear nuevos proyectos siguiendo el instructivo [Proyecto Nuevo](../../../documentación/proyecto_nuevo.md).
+Este proyecto sirve para rendir el examen de promocion  [Proyecto Nuevo](../../../documentación/proyecto_nuevo.md).

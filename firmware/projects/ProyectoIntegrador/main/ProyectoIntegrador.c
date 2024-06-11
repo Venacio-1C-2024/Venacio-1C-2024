@@ -43,7 +43,7 @@ TaskHandle_t main_task_handle = NULL;
 #define GPIO_foco GPIO_22
 #define GPIO_humi GPIO_10
 /*==================[internal data definition]===============================*/
-void FuncionTask1(); 
+ 
 void TaskSensar ();
 void TaskVerificar();
 void VerificarTemperatura();
