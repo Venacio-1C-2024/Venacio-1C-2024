@@ -1,0 +1,732 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Integrador: Referencia del archivo firmware/projects/ProyectoIntegrador/main/ProyectoIntegrador.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto Integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_proyecto_integrador_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo ProyectoIntegrador.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;gpio_mcu.h&quot;</code><br />
+<code>#include &quot;hc_sr04.h&quot;</code><br />
+<code>#include &quot;timer_mcu.h&quot;</code><br />
+<code>#include &quot;uart_mcu.h&quot;</code><br />
+<code>#include &quot;analog_io_mcu.h&quot;</code><br />
+<code>#include &quot;si7007.h&quot;</code><br />
+<code>#include &quot;ble_mcu.h&quot;</code><br />
+<code>#include &quot;ldr.h&quot;</code><br />
+<code>#include &quot;math.h&quot;</code><br />
+</div>
+<p><a href="_proyecto_integrador_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a04aee176f9421488a143921173c26509" id="r_a04aee176f9421488a143921173c26509"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04aee176f9421488a143921173c26509">GPIO_vent</a>&#160;&#160;&#160;GPIO_21</td></tr>
+<tr class="memdesc:a04aee176f9421488a143921173c26509"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_vent es un alias para GPIO_21 esto permite cambiar el pin del sensor de humedad fácilmente si es necesario.  <br /></td></tr>
+<tr class="separator:a04aee176f9421488a143921173c26509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4f9cb8c0c9dd51ca527e5efbcfa2bf" id="r_a8c4f9cb8c0c9dd51ca527e5efbcfa2bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c4f9cb8c0c9dd51ca527e5efbcfa2bf">GPIO_foco</a>&#160;&#160;&#160;GPIO_22</td></tr>
+<tr class="memdesc:a8c4f9cb8c0c9dd51ca527e5efbcfa2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_vent es un alias para GPIO_22 esto permite cambiar el pin del sensor de humedad fácilmente si es necesario.  <br /></td></tr>
+<tr class="separator:a8c4f9cb8c0c9dd51ca527e5efbcfa2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7817bd93c207afdb8690c5147461edd6" id="r_a7817bd93c207afdb8690c5147461edd6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7817bd93c207afdb8690c5147461edd6">GPIO_humi</a>&#160;&#160;&#160;GPIO_23</td></tr>
+<tr class="memdesc:a7817bd93c207afdb8690c5147461edd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_humi es un alias para GPIO_23 esto permite cambiar el pin del sensor de humedad fácilmente si es necesario.  <br /></td></tr>
+<tr class="separator:a7817bd93c207afdb8690c5147461edd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a3c00d9bf47733e72d60af8f7491a06cc" id="r_a3c00d9bf47733e72d60af8f7491a06cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c00d9bf47733e72d60af8f7491a06cc">TaskMedir</a> ()</td></tr>
+<tr class="memdesc:a3c00d9bf47733e72d60af8f7491a06cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea encargada de medir las variables de humedad, temperatura y luz.  <br /></td></tr>
+<tr class="separator:a3c00d9bf47733e72d60af8f7491a06cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13646a17633fdc424bdbdcf59b2ffb56" id="r_a13646a17633fdc424bdbdcf59b2ffb56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13646a17633fdc424bdbdcf59b2ffb56">TaskVerificar</a> ()</td></tr>
+<tr class="memdesc:a13646a17633fdc424bdbdcf59b2ffb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea encargada de llamar a las funciones que verifican las condiciones de las variables.  <br /></td></tr>
+<tr class="separator:a13646a17633fdc424bdbdcf59b2ffb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437251e3e5d7e3e0f950a64f15727f2c" id="r_a437251e3e5d7e3e0f950a64f15727f2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a437251e3e5d7e3e0f950a64f15727f2c">VerificarTemperatura</a> ()</td></tr>
+<tr class="memdesc:a437251e3e5d7e3e0f950a64f15727f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que verifica el nivel de temperatura para prender el ventilador.  <br /></td></tr>
+<tr class="separator:a437251e3e5d7e3e0f950a64f15727f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a480161709c7ed770998b95e80256a7eb" id="r_a480161709c7ed770998b95e80256a7eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a480161709c7ed770998b95e80256a7eb">VerificarHumedad</a> ()</td></tr>
+<tr class="memdesc:a480161709c7ed770998b95e80256a7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que verifica el nivel de humedad para prender el humidificador.  <br /></td></tr>
+<tr class="separator:a480161709c7ed770998b95e80256a7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32de3dc971d79d24c2d6a171d935ed5" id="r_ad32de3dc971d79d24c2d6a171d935ed5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad32de3dc971d79d24c2d6a171d935ed5">VerificarLuz</a> ()</td></tr>
+<tr class="memdesc:ad32de3dc971d79d24c2d6a171d935ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion que verifica el nivel de luz para prender el foco.  <br /></td></tr>
+<tr class="separator:ad32de3dc971d79d24c2d6a171d935ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8372dd148844bad14057c429678c43e1" id="r_a8372dd148844bad14057c429678c43e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8372dd148844bad14057c429678c43e1">CalcularDatos</a> ()</td></tr>
+<tr class="memdesc:a8372dd148844bad14057c429678c43e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea encargada de calcular el promedio el maximo y el minimo de humedad y temperatura y enviarlo al celular por bluetooh.  <br /></td></tr>
+<tr class="separator:a8372dd148844bad14057c429678c43e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a45e996847c71b90c22711a35a15bbc16" id="r_a45e996847c71b90c22711a35a15bbc16"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45e996847c71b90c22711a35a15bbc16">temperatura</a></td></tr>
+<tr class="memdesc:a45e996847c71b90c22711a35a15bbc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo uint16_t que almacenada el valor de temperatura medido  <br /></td></tr>
+<tr class="separator:a45e996847c71b90c22711a35a15bbc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6699515aea94f68c031138ea70c8a69" id="r_ac6699515aea94f68c031138ea70c8a69"><td class="memItemLeft" align="right" valign="top">volatile float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6699515aea94f68c031138ea70c8a69">luz</a></td></tr>
+<tr class="memdesc:ac6699515aea94f68c031138ea70c8a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo float que almacena el valor de luz medido en lux  <br /></td></tr>
+<tr class="separator:ac6699515aea94f68c031138ea70c8a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba02b7472f554878fec88a6aaaa2c045" id="r_aba02b7472f554878fec88a6aaaa2c045"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba02b7472f554878fec88a6aaaa2c045">humedad</a></td></tr>
+<tr class="memdesc:aba02b7472f554878fec88a6aaaa2c045"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo uint16_t que almacena el valor de humedad medido  <br /></td></tr>
+<tr class="separator:aba02b7472f554878fec88a6aaaa2c045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af75d69ae327f4e816d81b7ce1f1e5bbc" id="r_af75d69ae327f4e816d81b7ce1f1e5bbc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af75d69ae327f4e816d81b7ce1f1e5bbc">acumulador_temperatura</a> = 0</td></tr>
+<tr class="memdesc:af75d69ae327f4e816d81b7ce1f1e5bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo float que va a acumulando los valores de temperatura obtenidos  <br /></td></tr>
+<tr class="separator:af75d69ae327f4e816d81b7ce1f1e5bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6181c0b7f4bd951f7259f5d7a949896" id="r_ae6181c0b7f4bd951f7259f5d7a949896"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6181c0b7f4bd951f7259f5d7a949896">maxtemp</a> =0</td></tr>
+<tr class="memdesc:ae6181c0b7f4bd951f7259f5d7a949896"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo uint16_t que guarda el valor maximo de temperatura  <br /></td></tr>
+<tr class="separator:ae6181c0b7f4bd951f7259f5d7a949896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5667560c76905fe91539b96dcea388c6" id="r_a5667560c76905fe91539b96dcea388c6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5667560c76905fe91539b96dcea388c6">mintemp</a> =0</td></tr>
+<tr class="memdesc:a5667560c76905fe91539b96dcea388c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo uint16_t que guarda el valor minimo de temperatura  <br /></td></tr>
+<tr class="separator:a5667560c76905fe91539b96dcea388c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf88f78b1a127747c337657e96fefe8" id="r_aacf88f78b1a127747c337657e96fefe8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacf88f78b1a127747c337657e96fefe8">promediotemp</a> =0</td></tr>
+<tr class="memdesc:aacf88f78b1a127747c337657e96fefe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo float que guarda el promedio de temperatura  <br /></td></tr>
+<tr class="separator:aacf88f78b1a127747c337657e96fefe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a073ac5e3ffff9979583d5f436b4e06ed" id="r_a073ac5e3ffff9979583d5f436b4e06ed"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a073ac5e3ffff9979583d5f436b4e06ed">acumulador_humedad</a> = 0</td></tr>
+<tr class="separator:a073ac5e3ffff9979583d5f436b4e06ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b81d8b975d17b99725ce3d676f0e4b" id="r_a90b81d8b975d17b99725ce3d676f0e4b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90b81d8b975d17b99725ce3d676f0e4b">contador</a> =0</td></tr>
+<tr class="separator:a90b81d8b975d17b99725ce3d676f0e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274b2a84306d76025966d99402036919" id="r_a274b2a84306d76025966d99402036919"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274b2a84306d76025966d99402036919">promediohum</a> =0</td></tr>
+<tr class="memdesc:a274b2a84306d76025966d99402036919"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo float que permite almacenar el promedio de la humedad  <br /></td></tr>
+<tr class="separator:a274b2a84306d76025966d99402036919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c75b4f34726e9b7a8dd42ca7fa1d31d" id="r_a2c75b4f34726e9b7a8dd42ca7fa1d31d"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c75b4f34726e9b7a8dd42ca7fa1d31d">main_task_handle</a> = NULL</td></tr>
+<tr class="memdesc:a2c75b4f34726e9b7a8dd42ca7fa1d31d"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable de tipo TaskHandle_t que se utiliza para manejar las tareas  <br /></td></tr>
+<tr class="separator:a2c75b4f34726e9b7a8dd42ca7fa1d31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a8c4f9cb8c0c9dd51ca527e5efbcfa2bf" name="a8c4f9cb8c0c9dd51ca527e5efbcfa2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c4f9cb8c0c9dd51ca527e5efbcfa2bf">&#9670;&#160;</a></span>GPIO_foco</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_foco&#160;&#160;&#160;GPIO_22</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_vent es un alias para GPIO_22 esto permite cambiar el pin del sensor de humedad fácilmente si es necesario. </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00115">115</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00233">VerificarLuz()</a>.</p>
+
+</div>
+</div>
+<a id="a7817bd93c207afdb8690c5147461edd6" name="a7817bd93c207afdb8690c5147461edd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7817bd93c207afdb8690c5147461edd6">&#9670;&#160;</a></span>GPIO_humi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_humi&#160;&#160;&#160;GPIO_23</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_humi es un alias para GPIO_23 esto permite cambiar el pin del sensor de humedad fácilmente si es necesario. </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00120">120</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00218">VerificarHumedad()</a>.</p>
+
+</div>
+</div>
+<a id="a04aee176f9421488a143921173c26509" name="a04aee176f9421488a143921173c26509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04aee176f9421488a143921173c26509">&#9670;&#160;</a></span>GPIO_vent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIO_vent&#160;&#160;&#160;GPIO_21</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_vent es un alias para GPIO_21 esto permite cambiar el pin del sensor de humedad fácilmente si es necesario. </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00110">110</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00208">VerificarTemperatura()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00345">345</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00105">main_task_handle</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00198">TaskVerificar()</a>.</p>
+
+</div>
+</div>
+<a id="a8372dd148844bad14057c429678c43e1" name="a8372dd148844bad14057c429678c43e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8372dd148844bad14057c429678c43e1">&#9670;&#160;</a></span>CalcularDatos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CalcularDatos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea encargada de calcular el promedio el maximo y el minimo de humedad y temperatura y enviarlo al celular por bluetooh. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00280">280</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00090">acumulador_humedad</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00070">acumulador_temperatura</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00095">contador</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00075">maxtemp</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00080">mintemp</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00100">promediohum</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00085">promediotemp</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00055">temperatura</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00345">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a3c00d9bf47733e72d60af8f7491a06cc" name="a3c00d9bf47733e72d60af8f7491a06cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c00d9bf47733e72d60af8f7491a06cc">&#9670;&#160;</a></span>TaskMedir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TaskMedir </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea encargada de medir las variables de humedad, temperatura y luz. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00179">179</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00090">acumulador_humedad</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00070">acumulador_temperatura</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00095">contador</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00065">humedad</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00060">luz</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00055">temperatura</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00345">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a13646a17633fdc424bdbdcf59b2ffb56" name="a13646a17633fdc424bdbdcf59b2ffb56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13646a17633fdc424bdbdcf59b2ffb56">&#9670;&#160;</a></span>TaskVerificar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TaskVerificar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea encargada de llamar a las funciones que verifican las condiciones de las variables. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00198">198</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00218">VerificarHumedad()</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00233">VerificarLuz()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00208">VerificarTemperatura()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00345">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a480161709c7ed770998b95e80256a7eb" name="a480161709c7ed770998b95e80256a7eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a480161709c7ed770998b95e80256a7eb">&#9670;&#160;</a></span>VerificarHumedad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VerificarHumedad </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que verifica el nivel de humedad para prender el humidificador. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00218">218</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00120">GPIO_humi</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00065">humedad</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00198">TaskVerificar()</a>.</p>
+
+</div>
+</div>
+<a id="ad32de3dc971d79d24c2d6a171d935ed5" name="ad32de3dc971d79d24c2d6a171d935ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32de3dc971d79d24c2d6a171d935ed5">&#9670;&#160;</a></span>VerificarLuz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VerificarLuz </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que verifica el nivel de luz para prender el foco. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00233">233</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00115">GPIO_foco</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00060">luz</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00198">TaskVerificar()</a>.</p>
+
+</div>
+</div>
+<a id="a437251e3e5d7e3e0f950a64f15727f2c" name="a437251e3e5d7e3e0f950a64f15727f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a437251e3e5d7e3e0f950a64f15727f2c">&#9670;&#160;</a></span>VerificarTemperatura()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VerificarTemperatura </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion que verifica el nivel de temperatura para prender el ventilador. </p>
+<p>*</p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>return <br  />
+</p><ul>
+<li>/ </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00208">208</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00110">GPIO_vent</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00055">temperatura</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00198">TaskVerificar()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a073ac5e3ffff9979583d5f436b4e06ed" name="a073ac5e3ffff9979583d5f436b4e06ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073ac5e3ffff9979583d5f436b4e06ed">&#9670;&#160;</a></span>acumulador_humedad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float acumulador_humedad = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li></li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00090">90</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a>.</p>
+
+</div>
+</div>
+<a id="af75d69ae327f4e816d81b7ce1f1e5bbc" name="af75d69ae327f4e816d81b7ce1f1e5bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af75d69ae327f4e816d81b7ce1f1e5bbc">&#9670;&#160;</a></span>acumulador_temperatura</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float acumulador_temperatura = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo float que va a acumulando los valores de temperatura obtenidos </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00070">70</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a>.</p>
+
+</div>
+</div>
+<a id="a90b81d8b975d17b99725ce3d676f0e4b" name="a90b81d8b975d17b99725ce3d676f0e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b81d8b975d17b99725ce3d676f0e4b">&#9670;&#160;</a></span>contador</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t contador =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li></li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00095">95</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a>.</p>
+
+</div>
+</div>
+<a id="aba02b7472f554878fec88a6aaaa2c045" name="aba02b7472f554878fec88a6aaaa2c045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba02b7472f554878fec88a6aaaa2c045">&#9670;&#160;</a></span>humedad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t humedad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo uint16_t que almacena el valor de humedad medido </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00065">65</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00218">VerificarHumedad()</a>.</p>
+
+</div>
+</div>
+<a id="ac6699515aea94f68c031138ea70c8a69" name="ac6699515aea94f68c031138ea70c8a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6699515aea94f68c031138ea70c8a69">&#9670;&#160;</a></span>luz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile float luz</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo float que almacena el valor de luz medido en lux </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00060">60</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00233">VerificarLuz()</a>.</p>
+
+</div>
+</div>
+<a id="a2c75b4f34726e9b7a8dd42ca7fa1d31d" name="a2c75b4f34726e9b7a8dd42ca7fa1d31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c75b4f34726e9b7a8dd42ca7fa1d31d">&#9670;&#160;</a></span>main_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t main_task_handle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo TaskHandle_t que se utiliza para manejar las tareas </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00105">105</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00345">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ae6181c0b7f4bd951f7259f5d7a949896" name="ae6181c0b7f4bd951f7259f5d7a949896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6181c0b7f4bd951f7259f5d7a949896">&#9670;&#160;</a></span>maxtemp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t maxtemp =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo uint16_t que guarda el valor maximo de temperatura </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00075">75</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a>.</p>
+
+</div>
+</div>
+<a id="a5667560c76905fe91539b96dcea388c6" name="a5667560c76905fe91539b96dcea388c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5667560c76905fe91539b96dcea388c6">&#9670;&#160;</a></span>mintemp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t mintemp =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo uint16_t que guarda el valor minimo de temperatura </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00080">80</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a>.</p>
+
+</div>
+</div>
+<a id="a274b2a84306d76025966d99402036919" name="a274b2a84306d76025966d99402036919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a274b2a84306d76025966d99402036919">&#9670;&#160;</a></span>promediohum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float promediohum =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo float que permite almacenar el promedio de la humedad </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00100">100</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a>.</p>
+
+</div>
+</div>
+<a id="aacf88f78b1a127747c337657e96fefe8" name="aacf88f78b1a127747c337657e96fefe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf88f78b1a127747c337657e96fefe8">&#9670;&#160;</a></span>promediotemp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float promediotemp =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo float que guarda el promedio de temperatura </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00085">85</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a>.</p>
+
+</div>
+</div>
+<a id="a45e996847c71b90c22711a35a15bbc16" name="a45e996847c71b90c22711a35a15bbc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e996847c71b90c22711a35a15bbc16">&#9670;&#160;</a></span>temperatura</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t temperatura</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variable de tipo uint16_t que almacenada el valor de temperatura medido </p>
+<p>* </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00055">55</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00280">CalcularDatos()</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00179">TaskMedir()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00208">VerificarTemperatura()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_7016acc6553751c027c9f2ed50474adb.html">ProyectoIntegrador</a></li><li class="navelem"><a class="el" href="dir_b65d26f8c88ba3c0ef1aaf9c15e368f5.html">main</a></li><li class="navelem"><a class="el" href="_proyecto_integrador_8c.html">ProyectoIntegrador.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

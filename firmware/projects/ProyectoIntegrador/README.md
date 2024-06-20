@@ -1,3 +1,3 @@
-# Template
+# Proyecto Integrador 
 
-Este proyecto sirve como platilla para crear nuevos proyectos siguiendo el instructivo [Proyecto Nuevo](../../../documentación/proyecto_nuevo.md).
+Este proyecto es el proyecto final de la catedra de electronica progrmabale de la alumna Venacio Natasha, es el codigo de un invernadero automatizado [Proyecto Integrador ]
