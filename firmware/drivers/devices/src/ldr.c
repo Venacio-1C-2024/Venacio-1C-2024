@@ -28,12 +28,12 @@ bool LdrInit(){
 float LdrMeasureLight(void){
     uint16_t Rc= 5; //resientenica en valor 10KΩ
     uint16_t B= 4;  // Resientencia a la luz de 3KΩ
-    uint16_t A= 1000; //esistencia de un 1MΩ en oscuridad 
+    uint16_t A= 1000; //Resistencia de un 1MΩ en oscuridad 
     uint16_t value;
     float ilum=0; 
      AnalogInputReadSingle(luz_config.input, &value);
-    ilum = ((long)value*A*10)/((long)B*5*(TOTAL_BITS-value)); //te da lux
-// cuando esta la luz el voltaje sera 2.0625 o 20625 mV y cuando hay oscuridad 0,0164 V o 16.41 mV
+    ilum = ((long)value*A*10)/((long)B*5*(TOTAL_BITS-value)); 
+    //Resistencia a 3300 mV, cable  rojo CH3 y LDR a tierra
 return ilum;
 }
 
