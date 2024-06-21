@@ -207,10 +207,10 @@ void TaskVerificar(){
 }	
 void VerificarTemperatura(){
 
-	if(temperatura>30){ //valor de tension referido a los 30 grados 
+	if(temperatura>25){ //valor de tension referido a los 30 grados 
 	GPIOOff(GPIO_vent); //Actua por bajo el rele 
 	}
-	else if(temperatura<30) {
+	else if(temperatura<25) {
 	GPIOOn(GPIO_22);	
 	}
 }
@@ -218,7 +218,7 @@ void VerificarTemperatura(){
 void VerificarHumedad(){
 
 	
-	if(humedad>40){ // valor de tension referido al 40% de la humedad 
+	if(humedad<60){ // valor de tension referido al 60% de la humedad 
 	
 	GPIOOn(GPIO_humi);
 
@@ -307,32 +307,32 @@ void CalcularDatos (){
 		
 		//Envio los datos por bluetooh 
 
-	strcpy(msg4, "");
-			sprintf(auxmsg4, "*Promedio temperatura %.2f\n*", promediotemp);
-			strcat(msg4, auxmsg4);
-			BleSendString(msg4);
+		strcpy(msg4, "");
+		sprintf(auxmsg4, "*Promedio temperatura %.2f\n*", promediotemp);
+		strcat(msg4, auxmsg4);
+		BleSendString(msg4);
 
-			strcpy(msg5, "");
-			sprintf(auxmsg5, "*Promedio humedad %.2f\n*", promediohum);
-			strcat(msg5, auxmsg5);
-			BleSendString(msg5);
+		strcpy(msg5, "");
+		sprintf(auxmsg5, "*Promedio humedad %.2f\n*", promediohum);
+		strcat(msg5, auxmsg5);
+		BleSendString(msg5);
 
-			strcpy(msg6, "");
-			sprintf(auxmsg6, "*Maxima temperatura %u\n*", maxtemp);
-			strcat(msg6, auxmsg6);
-			BleSendString(msg6);
+		strcpy(msg6, "");
+		sprintf(auxmsg6, "*Maxima temperatura %u\n*", maxtemp);
+		strcat(msg6, auxmsg6);
+		BleSendString(msg6);
 
-			strcpy(msg7, "");
-			sprintf(auxmsg7, "*Minima temperatura %u\n*", mintemp);
-			strcat(msg7, auxmsg7);
-			BleSendString(msg7);
+		strcpy(msg7, "");
+		sprintf(auxmsg7, "*Minima temperatura %u\n*", mintemp);
+		strcat(msg7, auxmsg7);
+		BleSendString(msg7);
 
-			printf("Temperatura maxima %u \n", maxtemp);
-			printf("Temperatura minima %u \n", mintemp);
-			//Pongo de nuevo el contador  y los acumuladores en cero para sacar un nuevo promedio
-			contador=0;
-			acumulador_temperatura=0;
-			acumulador_humedad=0;
+		printf("Temperatura maxima %u \n", maxtemp);
+		printf("Temperatura minima %u \n", mintemp);
+		//Pongo de nuevo el contador  y los acumuladores en cero para sacar un nuevo promedio
+		contador=0;
+		acumulador_temperatura=0;
+		acumulador_humedad=0;
 		}
 		
 
